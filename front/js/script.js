@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="petit-bloc3">
         <p class="dix-neuf"></p>
         <p class="vingt"></p>
-        <p class="vingt-un"></p>
+        <p class="vingt-et-un"></p>
         <p class="vingt-deux"></p>
         <p class="vingt-trois"></p>
         <p class="vingt-quatre"></p>
@@ -125,6 +125,7 @@ window.addEventListener("DOMContentLoaded", function() {
     let p18 = document.getElementsByClassName('dix-huit')[0];
     let p19 = document.getElementsByClassName('dix-neuf')[0];
     let p20 = document.getElementsByClassName('vingt')[0];
+    let p21 = document.getElementsByClassName('vingt-et-un')[0];
     
     gBloc.addEventListener('click', function () {
         console.log(event);
