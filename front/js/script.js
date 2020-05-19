@@ -1,15 +1,16 @@
 window.addEventListener("DOMContentLoaded", function() {
     let gBloc = document.getElementById('gros-bloc');
+    let nombreBloc = document.getElementById('nombre');
 
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
     <div class="petit-bloc1">
         <p class="first-line un"></p>
         <p class="first-line deux"></p>
-        <p class="first-line trois"></p>
+        <p class="first-line trois right-line"></p>
         <p class="first-line quatre"></p>
         <p class="first-line cinq"></p>
-        <p class="first-line six"></p>
+        <p class="first-line six right-line"></p>
         <p class="first-line sept"></p>
         <p class="first-line huit"></p>
         <p class="first-line neuf"></p>
@@ -17,32 +18,32 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="petit-bloc2">
         <p class="dix"></p>
         <p class="onze"></p>
-        <p class="douze"></p>
+        <p class="douze right-line"></p>
         <p class="treize"></p>
         <p class="quatorze"></p>
-        <p class="quinze"></p>
+        <p class="quinze right-line"></p>
         <p class="seize"></p>
         <p class="dix-sept"></p>
         <p class="dix-huit"></p>
     </div>
     <div class="petit-bloc3">
-        <p class="dix-neuf"></p>
-        <p class="vingt"></p>
-        <p class="vingt-et-un"></p>
-        <p class="vingt-deux"></p>
-        <p class="vingt-trois"></p>
-        <p class="vingt-quatre"></p>
-        <p class="vingt-cinq"></p>
-        <p class="vingt-six"></p>
-        <p class="vingt-sept"></p>
+        <p class="dix-neuf bottom-line"></p>
+        <p class="vingt bottom-line"></p>
+        <p class="vingt-et-un right-line bottom-line"></p>
+        <p class="vingt-deux bottom-line"></p>
+        <p class="vingt-trois bottom-line"></p>
+        <p class="vingt-quatre right-line bottom-line"></p>
+        <p class="vingt-cinq bottom-line"></p>
+        <p class="vingt-six bottom-line"></p>
+        <p class="vingt-sept bottom-line"></p>
     </div>
     <div class="petit-bloc4">
         <p class="vingt-huit"></p>
         <p class="vingt-neuf"></p>
-        <p class="trente"></p>
+        <p class="trente right-line"></p>
         <p class="trente-et-un"></p>
         <p class="trente-deux"></p>
-        <p class="trente-trois"></p>
+        <p class="trente-trois right-line"></p>
         <p class="trente-quatre"></p>
         <p class="trente-cinq"></p>
         <p class="trente-six"></p>
@@ -50,32 +51,32 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="petit-bloc5">
         <p class="trente-sept"></p>
         <p class="trente-huit"></p>
-        <p class="trente-neuf"></p>
+        <p class="trente-neuf right-line"></p>
         <p class="quarante"></p>
         <p class="quarante-et-un"></p>
-        <p class="quarante-deux"></p>
+        <p class="quarante-deux right-line"></p>
         <p class="quarante-trois"></p>
         <p class="quarante-quatre"></p>
         <p class="quarante-cinq"></p>
     </div>
     <div class="petit-bloc6">
-        <p class="quarante-six"></p>
-        <p class="quarante-sept"></p>
-        <p class="quarante-huit"></p>
-        <p class="quarante-neuf"></p>
-        <p class="cinquante"></p>
-        <p class="cinquante-et-un"></p>
-        <p class="cinquante-deux"></p>
-        <p class="cinquante-trois"></p>
-        <p class="cinquante-quatre"></p>
+        <p class="quarante-six bottom-line"></p>
+        <p class="quarante-sept bottom-line"></p>
+        <p class="quarante-huit right-line bottom-line"></p>
+        <p class="quarante-neuf bottom-line"></p>
+        <p class="cinquante bottom-line"></p>
+        <p class="cinquante-et-un right-line bottom-line"></p>
+        <p class="cinquante-deux bottom-line"></p>
+        <p class="cinquante-trois bottom-line"></p>
+        <p class="cinquante-quatre bottom-line"></p>
     </div>
     <div class="petit-bloc7">
         <p class="cinquante-cinq"></p>
         <p class="cinquante-six"></p>
-        <p class="cinquante-sept"></p>
+        <p class="cinquante-sept right-line"></p>
         <p class="cinquante-huit"></p>
         <p class="cinquante-neuf"></p>
-        <p class="soixante"></p>
+        <p class="soixante right-line"></p>
         <p class="soixante-et-un"></p>
         <p class="soixante-deux"></p>
         <p class="soixante-trois"></p>
@@ -83,10 +84,10 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="petit-bloc8">
         <p class="soixante-quatre"></p>
         <p class="soixante-cinq"></p>
-        <p class="soixante-six"></p>
+        <p class="soixante-six right-line"></p>
         <p class="soixante-sept"></p>
         <p class="soixante-huit"></p>
-        <p class="soixante-neuf"></p>
+        <p class="soixante-neuf right-line"></p>
         <p class="soixante-dix"></p>
         <p class="soixante-et-onze"></p>
         <p class="soixante-douze"></p>
@@ -94,10 +95,10 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="petit-bloc9">
         <p class="last-line soixante-treize"></p>
         <p class="last-line soixante-quatorze"></p>
-        <p class="last-line soixante-quinze"></p>
+        <p class="last-line soixante-quinze right-line"></p>
         <p class="last-line soixante-seize"></p>
         <p class="last-line soixante-dix-sept"></p>
-        <p class="last-line soixante-dix-huit"></p>
+        <p class="last-line soixante-dix-huit right-line"></p>
         <p class="last-line soixante-dix-neuf"></p>
         <p class="last-line quatre-vingt"></p>
         <p class="last-line quatre-vingt-un"></p>
@@ -187,6 +188,15 @@ window.addEventListener("DOMContentLoaded", function() {
     let p80 = document.getElementsByClassName('quatre-vingt')[0];
     let p81 = document.getElementsByClassName('quatre-vingt-un')[0];
 
+    let un = document.getElementsByClassName('nombre-un')[0].textContent;
+    let deux = document.getElementsByClassName('nombre-deux')[0].textContent;
+    let trois = document.getElementsByClassName('nombre-trois')[0].textContent;
+    let quatre = document.getElementsByClassName('nombre-quatre')[0].textContent;
+    let cinq = document.getElementsByClassName('nombre-cinq')[0].textContent;
+    let six = document.getElementsByClassName('nombre-six')[0].textContent;
+    let sept = document.getElementsByClassName('nombre-sept')[0].textContent;
+    let huit = document.getElementsByClassName('nombre-huit')[0].textContent;
+    let neuf = document.getElementsByClassName('nombre-neuf')[0].textContent;
 
     // retire la classe à toutes les cases
     function removeClass() {
@@ -272,253 +282,532 @@ window.addEventListener("DOMContentLoaded", function() {
         p80.classList.remove('fond-case');
         p81.classList.remove('fond-case');
     }
+
+    // ajout nombre dans case
+    let nombre = [];
+    let last;
+    function ajoutNombre() {
+        last = nombre[nombre.length - 1];
+        nombreBloc.addEventListener('click', function () {
+            if (event.clientX >= 0 && event.clientX <= 43 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = un;
+            } else if (event.clientX >= 44 && event.clientX <= 84 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = deux;
+            } else if (event.clientX >= 85 && event.clientX <= 125 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = trois;
+            } else if (event.clientX >= 126 && event.clientX <= 166 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = quatre;
+            } else if (event.clientX >= 167 && event.clientX <= 207 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = cinq;
+            } else if (event.clientX >= 208 && event.clientX <= 248 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = six;
+            } else if (event.clientX >= 249 && event.clientX <= 289 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = sept;
+            } else if (event.clientX >= 290 && event.clientX <= 330 && event.clientY >= 470 && event.clientY <= 507){
+                last.innerHTML = "";
+                last.innerHTML = huit;
+            } else if (event.clientX >= 331 && event.clientX <= 371 && event.clientY >= 470 && event.clientY <= 507) {
+                last.innerHTML = "";
+                last.innerHTML = neuf;
+            }
+        })
+    }
     
     // ajoute la séléction d'une case
     gBloc.addEventListener('click', function () {
-        console.log(event);
         if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p1.classList.add('fond-case');
+            last = "";
+            nombre.push(p1);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p2.classList.add('fond-case');
+            last = "";
+            nombre.push(p2);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p3.classList.add('fond-case');
+            last = "";
+            nombre.push(p3);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p4.classList.add('fond-case');
+            last = "";
+            nombre.push(p4);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p5.classList.add('fond-case');
+            last = "";
+            nombre.push(p5);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p6.classList.add('fond-case');
+            last = "";
+            nombre.push(p6);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p7.classList.add('fond-case');
+            last = "";
+            nombre.push(p7);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p8.classList.add('fond-case');
+            last = "";
+            nombre.push(p8);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 68 && event.clientY <= 112) {
             removeClass();
             p9.classList.add('fond-case');
+            last = "";
+            nombre.push(p9);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p10.classList.add('fond-case');
+            last = "";
+            nombre.push(p10);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p11.classList.add('fond-case');
+            last = "";
+            nombre.push(p11);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p12.classList.add('fond-case');
+            last = "";
+            nombre.push(p12);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p13.classList.add('fond-case');
+            last = "";
+            nombre.push(p13);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p14.classList.add('fond-case');
+            last = "";
+            nombre.push(p14);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p15.classList.add('fond-case');
+            last = "";
+            nombre.push(p15);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p16.classList.add('fond-case');
+            last = "";
+            nombre.push(p16);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p17.classList.add('fond-case');
+            last = "";
+            nombre.push(p17);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 112 && event.clientY <= 153) {
             removeClass();
             p18.classList.add('fond-case');
+            last = "";
+            nombre.push(p18);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p19.classList.add('fond-case');
+            last = "";
+            nombre.push(p19);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p20.classList.add('fond-case');
+            last = "";
+            nombre.push(p20);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p21.classList.add('fond-case');
+            last = "";
+            nombre.push(p21);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p22.classList.add('fond-case');
+            last = "";
+            nombre.push(p22);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p23.classList.add('fond-case');
+            last = "";
+            nombre.push(p23);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p24.classList.add('fond-case');
+            last = "";
+            nombre.push(p24);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p25.classList.add('fond-case');
+            last = "";
+            nombre.push(p25);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p26.classList.add('fond-case');
+            last = "";
+            nombre.push(p26);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 154 && event.clientY <= 195) {
             removeClass();
             p27.classList.add('fond-case');
+            last = "";
+            nombre.push(p27);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p28.classList.add('fond-case');
+            last = "";
+            nombre.push(p28);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p29.classList.add('fond-case');
+            last = "";
+            nombre.push(p29);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p30.classList.add('fond-case');
+            last = "";
+            nombre.push(p30);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p31.classList.add('fond-case');
+            last = "";
+            nombre.push(p31);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p32.classList.add('fond-case');
+            last = "";
+            nombre.push(p32);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p33.classList.add('fond-case');
+            last = "";
+            nombre.push(p33);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p34.classList.add('fond-case');
+            last = "";
+            nombre.push(p34);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p35.classList.add('fond-case');
+            last = "";
+            nombre.push(p35);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 196 && event.clientY <= 237) {
             removeClass();
             p36.classList.add('fond-case');
+            last = "";
+            nombre.push(p36);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p37.classList.add('fond-case');
+            last = "";
+            nombre.push(p37);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p38.classList.add('fond-case');
+            last = "";
+            nombre.push(p38);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p39.classList.add('fond-case');
+            last = "";
+            nombre.push(p39);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p40.classList.add('fond-case');
+            last = "";
+            nombre.push(p40);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p41.classList.add('fond-case');
+            last = "";
+            nombre.push(p41);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p42.classList.add('fond-case');
+            last = "";
+            nombre.push(p42);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p43.classList.add('fond-case');
+            last = "";
+            nombre.push(p43);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p44.classList.add('fond-case');
+            last = "";
+            nombre.push(p44);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 238 && event.clientY <= 279) {
             removeClass();
             p45.classList.add('fond-case');
+            last = "";
+            nombre.push(p45);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p46.classList.add('fond-case');
+            last = "";
+            nombre.push(p46);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p47.classList.add('fond-case');
+            last = "";
+            nombre.push(p47);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p48.classList.add('fond-case');
+            last = "";
+            nombre.push(p48);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p49.classList.add('fond-case');
+            last = "";
+            nombre.push(p49);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p50.classList.add('fond-case');
+            last = "";
+            nombre.push(p50);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p51.classList.add('fond-case');
+            last = "";
+            nombre.push(p51);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p52.classList.add('fond-case');
+            last = "";
+            nombre.push(p52);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p53.classList.add('fond-case');
+            last = "";
+            nombre.push(p53);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 280 && event.clientY <= 321) {
             removeClass();
             p54.classList.add('fond-case');
+            last = "";
+            nombre.push(p54);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p55.classList.add('fond-case');
+            last = "";
+            nombre.push(p55);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p56.classList.add('fond-case');
+            last = "";
+            nombre.push(p56);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p57.classList.add('fond-case');
+            last = "";
+            nombre.push(p57);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p58.classList.add('fond-case');
+            last = "";
+            nombre.push(p58);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p59.classList.add('fond-case');
+            last = "";
+            nombre.push(p59);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p60.classList.add('fond-case');
+            last = "";
+            nombre.push(p60);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p61.classList.add('fond-case');
+            last = "";
+            nombre.push(p61);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p62.classList.add('fond-case');
+            last = "";
+            nombre.push(p62);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 322 && event.clientY <= 363) {
             removeClass();
             p63.classList.add('fond-case');
+            last = "";
+            nombre.push(p63);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p64.classList.add('fond-case');
+            last = "";
+            nombre.push(p64);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p65.classList.add('fond-case');
+            last = "";
+            nombre.push(p65);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p66.classList.add('fond-case');
+            last = "";
+            nombre.push(p66);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p67.classList.add('fond-case');
+            last = "";
+            nombre.push(p67);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p68.classList.add('fond-case');
+            last = "";
+            nombre.push(p68);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p69.classList.add('fond-case');
+            last = "";
+            nombre.push(p69);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p70.classList.add('fond-case');
+            last = "";
+            nombre.push(p70);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p71.classList.add('fond-case');
+            last = "";
+            nombre.push(p71);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 364 && event.clientY <= 405) {
             removeClass();
             p72.classList.add('fond-case');
+            last = "";
+            nombre.push(p72);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p73.classList.add('fond-case');
+            last = "";
+            nombre.push(p73);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p74.classList.add('fond-case');
+            last = "";
+            nombre.push(p74);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p75.classList.add('fond-case');
+            last = "";
+            nombre.push(p75);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p76.classList.add('fond-case');
+            last = "";
+            nombre.push(p76);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p77.classList.add('fond-case');
+            last = "";
+            nombre.push(p77);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p78.classList.add('fond-case');
+            last = "";
+            nombre.push(p78);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p79.classList.add('fond-case');
+            last = "";
+            nombre.push(p79);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p80.classList.add('fond-case');
+            last = "";
+            nombre.push(p80);
+            ajoutNombre(nombre);
         } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 406 && event.clientY <= 449) {
             removeClass();
             p81.classList.add('fond-case');
+            last = "";
+            nombre.push(p81);
+            ajoutNombre(nombre);
         } else {
             alert()
         }
