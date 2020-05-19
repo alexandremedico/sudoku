@@ -2,6 +2,34 @@ window.addEventListener("DOMContentLoaded", function() {
     let gBloc = document.getElementById('gros-bloc');
     let nombreBloc = document.getElementById('nombre');
 
+
+    // alea case et chiffre facile 38, moyen 30 et diffcile 21
+    let chiffres = [];
+    let j = 0;
+    for (let i = 0; i < 38; i++) {
+        chiffres[i] = Math.round(Math.random() * 81);
+        for (let chiffre of chiffres) {
+            if (chiffres[i] == 0) {
+                console.log('il y a un 0');
+                chiffres[i] = Math.round(Math.random() * 81);
+                chiffres.push(chiffres[i]);
+            } else if (chiffre != chiffres[i]) {
+                console.log('il y a aucun problemes');
+                console.log(chiffre)
+                console.log(chiffres[i]);
+                chiffres.push(chiffres[i]);
+                chiffres.pop();
+            } else {
+                console.log('erreur');
+                j++;
+                // chiffres[i] = Math.round(Math.random() * 81);
+                // chiffres.push(chiffres[i]);
+            }
+        }
+    }
+    console.log(chiffres);
+    console.log(j)
+
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
     <div class="petit-bloc1">
