@@ -1,34 +1,7 @@
 window.addEventListener("DOMContentLoaded", function() {
     let gBloc = document.getElementById('gros-bloc');
     let nombreBloc = document.getElementById('nombre');
-
-
-    // alea case et chiffre facile 38, moyen 30 et diffcile 21
     let chiffres = [];
-    let j = 0;
-    for (let i = 0; i < 38; i++) {
-        chiffres[i] = Math.round(Math.random() * 81);
-        for (let chiffre of chiffres) {
-            if (chiffres[i] == 0) {
-                console.log('il y a un 0');
-                chiffres[i] = Math.round(Math.random() * 81);
-                chiffres.push(chiffres[i]);
-            } else if (chiffre != chiffres[i]) {
-                console.log('il y a aucun problemes');
-                console.log(chiffre)
-                console.log(chiffres[i]);
-                chiffres.push(chiffres[i]);
-                chiffres.pop();
-            } else {
-                console.log('erreur');
-                j++;
-                // chiffres[i] = Math.round(Math.random() * 81);
-                // chiffres.push(chiffres[i]);
-            }
-        }
-    }
-    console.log(chiffres);
-    console.log(j)
 
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
@@ -225,6 +198,190 @@ window.addEventListener("DOMContentLoaded", function() {
     let sept = document.getElementsByClassName('nombre-sept')[0].textContent;
     let huit = document.getElementsByClassName('nombre-huit')[0].textContent;
     let neuf = document.getElementsByClassName('nombre-neuf')[0].textContent;
+
+    // chiffre dans grille
+    var puzzles = [
+        "123745698459681732678392145269584371513267948784913526937412856826375194451869237",
+        "126895374437621985958473126457983612193246578862517394269548731314769852785231649",
+        "142685973936217458857394612329451867174862593568973241298534716745621389136789425",
+        "158469372362587914794312658637215984259648173841973526726841593435796821189235467",
+        "269548731314769852785231649126895374437621985958473126457983612193246578862517394",
+        "362175948845963217179248635713296854458731629962584713439527681576184392821396457",
+        "386751942574928361291364875614837529793245186528619743478293165659817432132456987",
+        "418957632297643581563812794286571394354928716179436285723845169865139472941627358",
+        "452371986618429573379865241734629815162845397598713624293148567754236981186957432",
+        "531428679628579143749163825986217345214835967537496281792854163381796452654312978",
+        "753896412196274538482153679385624971421759683967318245248567139365912847791834526",
+        "872351946139264758654987321269587134843612975175439268418725693526391487793846512",
+        "921437568583629174674158392283746195765912438419835267674319852251847396983526741",
+        "954126783836759124172834956295431678371568492648297315849567312215983647763421589"];
+    
+    let puzzle = Math.round(Math.random() * 13);
+    console.log(puzzle);
+    console.log(puzzles[puzzle][0]);
+
+    chiffres[0] = p1;
+    chiffres[0].innerHTML = puzzles[puzzle][0];
+    chiffres[1] = p2;
+    chiffres[1].innerHTML = puzzles[puzzle][1];
+    chiffres[2] = p3;
+    chiffres[2].innerHTML = puzzles[puzzle][2];
+    chiffres[3] = p4;
+    chiffres[3].innerHTML = puzzles[puzzle][3];
+    chiffres[4] = p5;
+    chiffres[4].innerHTML = puzzles[puzzle][4];
+    chiffres[5] = p6;
+    chiffres[5].innerHTML = puzzles[puzzle][5];
+    chiffres[6] = p7;
+    chiffres[6].innerHTML = puzzles[puzzle][6];
+    chiffres[7] = p8;
+    chiffres[7].innerHTML = puzzles[puzzle][7];
+    chiffres[8] = p9;
+    chiffres[8].innerHTML = puzzles[puzzle][8];
+    chiffres[9] = p10;
+    chiffres[9].innerHTML = puzzles[puzzle][9];
+    chiffres[10] = p11;
+    chiffres[10].innerHTML = puzzles[puzzle][10];
+    chiffres[11] = p12;
+    chiffres[11].innerHTML = puzzles[puzzle][11];
+    chiffres[12] = p13;
+    chiffres[12].innerHTML = puzzles[puzzle][12];
+    chiffres[13] = p14;
+    chiffres[13].innerHTML = puzzles[puzzle][13];
+    chiffres[14] = p15;
+    chiffres[14].innerHTML = puzzles[puzzle][14];
+    chiffres[15] = p16;
+    chiffres[15].innerHTML = puzzles[puzzle][15];
+    chiffres[16] = p17;
+    chiffres[16].innerHTML = puzzles[puzzle][16];
+    chiffres[17] = p18;
+    chiffres[17].innerHTML = puzzles[puzzle][17];
+    chiffres[18] = p19;
+    chiffres[18].innerHTML = puzzles[puzzle][18];
+    chiffres[19] = p20;
+    chiffres[19].innerHTML = puzzles[puzzle][19];
+    chiffres[20] = p21;
+    chiffres[20].innerHTML = puzzles[puzzle][20];
+    chiffres[21] = p22;
+    chiffres[21].innerHTML = puzzles[puzzle][21];
+    chiffres[22] = p23;
+    chiffres[22].innerHTML = puzzles[puzzle][22];
+    chiffres[23] = p24;
+    chiffres[23].innerHTML = puzzles[puzzle][23];
+    chiffres[24] = p25;
+    chiffres[24].innerHTML = puzzles[puzzle][24];
+    chiffres[25] = p26;
+    chiffres[25].innerHTML = puzzles[puzzle][25];
+    chiffres[26] = p27;
+    chiffres[26].innerHTML = puzzles[puzzle][26];
+    chiffres[27] = p28;
+    chiffres[27].innerHTML = puzzles[puzzle][27];
+    chiffres[28] = p29;
+    chiffres[28].innerHTML = puzzles[puzzle][28];
+    chiffres[29] = p30;
+    chiffres[29].innerHTML = puzzles[puzzle][29];
+    chiffres[30] = p31;
+    chiffres[30].innerHTML = puzzles[puzzle][30];
+    chiffres[31] = p32;
+    chiffres[31].innerHTML = puzzles[puzzle][31];
+    chiffres[32] = p33;
+    chiffres[32].innerHTML = puzzles[puzzle][32];
+    chiffres[33] = p34;
+    chiffres[33].innerHTML = puzzles[puzzle][33];
+    chiffres[34] = p35;
+    chiffres[34].innerHTML = puzzles[puzzle][34];
+    chiffres[35] = p36;
+    chiffres[35].innerHTML = puzzles[puzzle][35];
+    chiffres[36] = p37;
+    chiffres[36].innerHTML = puzzles[puzzle][36];
+    chiffres[37] = p38;
+    chiffres[37].innerHTML = puzzles[puzzle][37];
+    chiffres[38] = p39;
+    chiffres[38].innerHTML = puzzles[puzzle][38];
+    chiffres[39] = p40;
+    chiffres[39].innerHTML = puzzles[puzzle][39];
+    chiffres[40] = p41;
+    chiffres[40].innerHTML = puzzles[puzzle][40];
+    chiffres[41] = p42;
+    chiffres[41].innerHTML = puzzles[puzzle][41];
+    chiffres[42] = p43;
+    chiffres[42].innerHTML = puzzles[puzzle][42];
+    chiffres[43] = p44;
+    chiffres[43].innerHTML = puzzles[puzzle][43];
+    chiffres[44] = p45;
+    chiffres[44].innerHTML = puzzles[puzzle][44];
+    chiffres[45] = p46;
+    chiffres[45].innerHTML = puzzles[puzzle][45];
+    chiffres[46] = p47;
+    chiffres[46].innerHTML = puzzles[puzzle][46];
+    chiffres[47] = p48;
+    chiffres[47].innerHTML = puzzles[puzzle][47];
+    chiffres[48] = p49;
+    chiffres[48].innerHTML = puzzles[puzzle][48];
+    chiffres[49] = p50;
+    chiffres[49].innerHTML = puzzles[puzzle][49];
+    chiffres[50] = p51;
+    chiffres[50].innerHTML = puzzles[puzzle][50];
+    chiffres[51] = p52;
+    chiffres[51].innerHTML = puzzles[puzzle][51];
+    chiffres[52] = p53;
+    chiffres[52].innerHTML = puzzles[puzzle][52];
+    chiffres[53] = p54;
+    chiffres[53].innerHTML = puzzles[puzzle][53];
+    chiffres[54] = p55;
+    chiffres[54].innerHTML = puzzles[puzzle][54];
+    chiffres[55] = p56;
+    chiffres[55].innerHTML = puzzles[puzzle][55];
+    chiffres[56] = p57;
+    chiffres[56].innerHTML = puzzles[puzzle][56];
+    chiffres[57] = p58;
+    chiffres[57].innerHTML = puzzles[puzzle][57];
+    chiffres[58] = p59;
+    chiffres[58].innerHTML = puzzles[puzzle][58];
+    chiffres[59] = p60;
+    chiffres[59].innerHTML = puzzles[puzzle][59];
+    chiffres[60] = p61;
+    chiffres[60].innerHTML = puzzles[puzzle][60];
+    chiffres[61] = p62;
+    chiffres[61].innerHTML = puzzles[puzzle][61];
+    chiffres[62] = p63;
+    chiffres[62].innerHTML = puzzles[puzzle][62];
+    chiffres[63] = p64;
+    chiffres[63].innerHTML = puzzles[puzzle][63];
+    chiffres[64] = p65;
+    chiffres[64].innerHTML = puzzles[puzzle][64];
+    chiffres[65] = p66;
+    chiffres[65].innerHTML = puzzles[puzzle][65];
+    chiffres[66] = p67;
+    chiffres[66].innerHTML = puzzles[puzzle][66];
+    chiffres[67] = p68;
+    chiffres[67].innerHTML = puzzles[puzzle][67];
+    chiffres[68] = p69;
+    chiffres[68].innerHTML = puzzles[puzzle][68];
+    chiffres[69] = p70;
+    chiffres[69].innerHTML = puzzles[puzzle][69];
+    chiffres[70] = p71;
+    chiffres[70].innerHTML = puzzles[puzzle][70];
+    chiffres[71] = p72;
+    chiffres[71].innerHTML = puzzles[puzzle][71];
+    chiffres[72] = p73;
+    chiffres[72].innerHTML = puzzles[puzzle][72];
+    chiffres[73] = p74;
+    chiffres[73].innerHTML = puzzles[puzzle][73];
+    chiffres[74] = p75;
+    chiffres[74].innerHTML = puzzles[puzzle][74];
+    chiffres[75] = p76;
+    chiffres[75].innerHTML = puzzles[puzzle][75];
+    chiffres[76] = p77;
+    chiffres[76].innerHTML = puzzles[puzzle][76];
+    chiffres[77] = p78;
+    chiffres[77].innerHTML = puzzles[puzzle][77];
+    chiffres[78] = p79;
+    chiffres[78].innerHTML = puzzles[puzzle][78];
+    chiffres[79] = p80;
+    chiffres[79].innerHTML = puzzles[puzzle][79];
+    chiffres[80] = p81;
+    chiffres[80].innerHTML = puzzles[puzzle][80];
 
     // retire la classe à toutes les cases
     function removeClass() {
