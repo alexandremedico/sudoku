@@ -20,16 +20,26 @@ body {
     align-items: center;
 }
 
-li {
+.game ul li {
     list-style: none;
     text-align: center;
-    padding-bottom: 60%;
+    margin-bottom: 60%;
+    font-size: 2rem;
+}
+
+#sidebarMenu ul li {
+    list-style: none;
+    text-align: center;
     font-size: 2rem;
 }
 
 li a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
+}
+
+#new-game {
     cursor: pointer;
 }
 
