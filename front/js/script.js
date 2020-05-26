@@ -217,6 +217,13 @@ window.addEventListener("DOMContentLoaded", function() {
     console.log(puzzle);
     console.log(puzzles[puzzle][0]);
 
+    let chiffreAffiche = [];
+    for (let i = 0; i < 5; i++) {
+        let nombre = Math.ceil(Math.random() * 10);
+        chiffreAffiche.push(nombre);
+    }
+    console.log(chiffreAffiche);
+
 
     p1.innerHTML = puzzles[puzzle][0];
     p2.innerHTML = puzzles[puzzle][1];

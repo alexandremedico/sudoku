@@ -11,12 +11,15 @@ document.getElementById('new-game').addEventListener('click', function () {
         </ul>
     </div>`);
     menu.classList.add('slide-in-right');
+    setTimeout(() => {
+        menu.classList.remove('slide-in-right');
+    }, 700);
 })
 
 var niveaux = {
-    1 : 17, /*faible*/
-    2 : 15, /*moyen*/
-    3 : 13, /*difficile*/
-    4 : 11, /*diabolique*/
-    5 : 9 /* impossible*/
+    1 : 38, /*faible*/
+    2 : 32, /*moyen*/
+    3 : 26, /*difficile*/
+    4 : 20, /*diabolique*/
+    5 : 16 /* impossible*/
 };
