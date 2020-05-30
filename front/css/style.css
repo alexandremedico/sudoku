@@ -102,3 +102,6 @@ li a {
     text-decoration: none;
 }
 
+.none {
+    visibility: hidden;
+}

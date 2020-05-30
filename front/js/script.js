@@ -1,6 +1,13 @@
 window.addEventListener("DOMContentLoaded", function() {
     let gBloc = document.getElementById('gros-bloc');
     let nombreBloc = document.getElementById('nombre');
+    let niveaux = {
+        Facile : 38,
+        Moyen : 32,
+        Difficile : 26,
+        Diaboblique : 20,
+        Impossible : 16 
+    };
 
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
