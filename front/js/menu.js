@@ -7,24 +7,37 @@ document.getElementById('new-game').addEventListener('click', function () {
     }, 700);
 })
 
+window.addEventListener("DOMContentLoaded", function() {
+    const socket = io();
 
-// envoie de la difficulté
-document.getElementById('facile').addEventListener('click', function () {
-    console.log(document.getElementById('facile').textContent);
-});
+    // envoie de la difficulté
+    document.getElementById('facile').addEventListener('click', function () {
+        console.log(document.getElementById('facile').textContent);
+        let valueContent = document.getElementById('facile').textContent;
+        socket.emit('value', valueContent);
+    });
 
-document.getElementById('moyen').addEventListener('click', function () {
-    console.log(document.getElementById('moyen').textContent);
-});
+    document.getElementById('moyen').addEventListener('click', function () {
+        console.log(document.getElementById('moyen').textContent);
+        let valueContent = document.getElementById('moyen').textContent;
+        socket.emit('value', valueContent);
+    });
 
-document.getElementById('difficile').addEventListener('click', function () {
-    console.log(document.getElementById('difficile').textContent);
-});
+    document.getElementById('difficile').addEventListener('click', function () {
+        console.log(document.getElementById('difficile').textContent);
+        let valueContent = document.getElementById('difficile').textContent;
+        socket.emit('value', valueContent);
+    });
 
-document.getElementById('diabolique').addEventListener('click', function () {
-    console.log(document.getElementById('diabolique').textContent);
-});
+    document.getElementById('diabolique').addEventListener('click', function () {
+        console.log(document.getElementById('diabolique').textContent);
+        let valueContent = document.getElementById('diabolique').textContent;
+        socket.emit('value', valueContent);
+    });
 
-document.getElementById('impossible').addEventListener('click', function () {
-    console.log(document.getElementById('impossible').textContent);
-});
+    document.getElementById('impossible').addEventListener('click', function () {
+        console.log(document.getElementById('impossible').textContent);
+        let valueContent = document.getElementById('impossible').textContent;
+        socket.emit('value', valueContent);
+    });
+})

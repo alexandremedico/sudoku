@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", function() {
+    const socket = io();
     let gBloc = document.getElementById('gros-bloc');
     let nombreBloc = document.getElementById('nombre');
     let niveaux = {
@@ -8,6 +9,11 @@ window.addEventListener("DOMContentLoaded", function() {
         Diaboblique : 20,
         Impossible : 16 
     };
+
+    socket.emit('valueSearch');
+    socket.on('valueReception', function (valueContent) {
+        console.log(valueContent);
+    })
 
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
