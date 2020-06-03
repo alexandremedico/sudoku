@@ -9,10 +9,14 @@ window.addEventListener("DOMContentLoaded", function() {
         Diaboblique : 20,
         Impossible : 16 
     };
+    let difficulty;
+    let value;
 
     socket.emit('valueSearch');
     socket.on('valueReception', function (valueContent) {
-        console.log(valueContent);
+        // value = valueContent;
+        difficulty = (Object.values(niveaux))[0];
+        console.log(difficulty);
     })
 
     // ajout div et p
