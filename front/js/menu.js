@@ -7,6 +7,14 @@ document.getElementById('new-game').addEventListener('click', function () {
     }, 700);
 })
 
+document.getElementById('Retour').addEventListener('click', function () {
+    menu.classList.add('slide-in-right-reverse');
+    setTimeout(() => {
+        menu.classList.remove('slide-in-right-reverse');
+        menu.classList.add('none');
+    }, 700);
+})
+
 window.addEventListener("DOMContentLoaded", function() {
     const socket = io();
 

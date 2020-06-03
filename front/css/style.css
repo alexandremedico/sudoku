@@ -53,7 +53,7 @@ li a {
 }
 .visible {
     position: absolute;
-    top: 20%;
+    top: 13%;
     width: 100%;
 }
 
@@ -77,6 +77,21 @@ li a {
     opacity: 1;
   }
 }
+
+.slide-in-right-reverse {
+	animation: slide-in-right-reverse 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+@keyframes slide-in-right-reverse {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
 .sidebarMenuInner{
     margin:0;
