@@ -20,32 +20,32 @@ window.addEventListener("DOMContentLoaded", function() {
 
     // envoie de la difficulté
     document.getElementById('facile').addEventListener('click', function () {
-        console.log(document.getElementById('facile').textContent);
-        let valueContent = document.getElementById('facile').textContent;
+        console.log(document.getElementById('facile').value);
+        let valueContent = document.getElementById('facile').value;
         socket.emit('value', valueContent);
     });
 
     document.getElementById('moyen').addEventListener('click', function () {
-        console.log(document.getElementById('moyen').textContent);
-        let valueContent = document.getElementById('moyen').textContent;
+        console.log(document.getElementById('moyen').value);
+        let valueContent = document.getElementById('moyen').value;
         socket.emit('value', valueContent);
     });
 
     document.getElementById('difficile').addEventListener('click', function () {
-        console.log(document.getElementById('difficile').textContent);
-        let valueContent = document.getElementById('difficile').textContent;
+        console.log(document.getElementById('difficile').value);
+        let valueContent = document.getElementById('difficile').value;
         socket.emit('value', valueContent);
     });
 
     document.getElementById('diabolique').addEventListener('click', function () {
-        console.log(document.getElementById('diabolique').textContent);
-        let valueContent = document.getElementById('diabolique').textContent;
+        console.log(document.getElementById('diabolique').value);
+        let valueContent = document.getElementById('diabolique').value;
         socket.emit('value', valueContent);
     });
 
     document.getElementById('impossible').addEventListener('click', function () {
-        console.log(document.getElementById('impossible').textContent);
-        let valueContent = document.getElementById('impossible').textContent;
+        console.log(document.getElementById('impossible').value);
+        let valueContent = document.getElementById('impossible').value;
         socket.emit('value', valueContent);
     });
 })
