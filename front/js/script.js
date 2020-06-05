@@ -14,6 +14,92 @@ window.addEventListener("DOMContentLoaded", function() {
     let j = 0;
     let nombreAlea;
 
+    let classe = {
+        1 : 'un',
+        2 : 'deux',
+        3 : 'trois',
+        4 : 'quatre',
+        5 : 'cinq',
+        6 : 'six',
+        7 : 'sept',
+        8 : 'huit',
+        9 : 'neuf',
+        10 : 'dix',
+        11 : 'onze',
+        12 : 'douze',
+        13 : 'treize',
+        14 : 'quatorze',
+        15 : 'quinze',
+        16 : 'seize',
+        17 : 'dix-sept',
+        18 : 'dix-huit',
+        19 : 'dix-neuf',
+        20 : 'vingt',
+        21 : 'vingt-et-un',
+        22 : 'vingt-deux',
+        23 : 'vingt-trois',
+        24 : 'vingt-quatre',
+        25 : 'vingt-cinq',
+        26 : 'vingt-six',
+        27 : 'vingt-sept',
+        28 : 'vingt-huit',
+        29 : 'vingt-neuf',
+        30 : 'trente',
+        31 : 'trente-et-un',
+        32 : 'trente-deux',
+        33 : 'trente-trois',
+        34 : 'trente-quatre',
+        35 : 'trente-cinq',
+        36 : 'trente-six',
+        37 : 'trente-sept',
+        38 : 'trente-huit',
+        39 : 'trente-neuf',
+        40 : 'quarante',
+        41 : 'quarante-et-un',
+        42 : 'quarante-deux',
+        43 : 'quarante-trois',
+        44 : 'quarante-quatre',
+        45 : 'quarante-cinq',
+        46 : 'quarante-six',
+        47 : 'quarante-sept',
+        48 : 'quarante-huit',
+        49 : 'quarante-neuf',
+        50 : 'cinquante',
+        51 : 'cinquante-et-un',
+        52 : 'cinquante-deux',
+        53 : 'cinquante-trois',
+        54 : 'cinquante-quatre',
+        55 : 'cinquante-cinq',
+        56 : 'cinquante-six',
+        57 : 'cinquante-sept',
+        58 : 'cinquante-huit',
+        59 : 'cinquante-neuf',
+        60 : 'soixante',
+        61 : 'soixante-et-un',
+        62 : 'soixante-deux',
+        63 : 'soixante-trois',
+        64 : 'soixante-quatre',
+        65 : 'soixante-cinq',
+        66 : 'soixante-six',
+        67 : 'soixante-sept',
+        68 : 'soixante-huit',
+        69 : 'soixante-neuf',
+        70 : 'soixante-dix',
+        71 : 'soixante-et-onze',
+        72 : 'soixante-douze',
+        73 : 'soixante-treize',
+        74 : 'soixante-quatorze',
+        75 : 'soixante-quinze',
+        76 : 'soixante-seize',
+        77 : 'soixante-dix-sept',
+        78 : 'soixante-dix-huit',
+        79 : 'soixante-dix-neuf',
+        80 : 'quatre-vingt',
+        81 : 'quatre-vingt-un'
+    }
+
+    
+    // récupération et affichage
     socket.emit('valueSearch');
     socket.on('valueReception', function (valueContent) {
         value = (Object.values(niveaux))[valueContent - 1];
@@ -27,10 +113,9 @@ window.addEventListener("DOMContentLoaded", function() {
             nombreAlea = Math.floor(Math.random() * 81);
             checkDouble(nombreAlea);
         }
-        ajoutChiffreGrille(nombreAlea);
         console.log(chiffreAffiche);
     })
-
+    
     function checkDouble(nombreAlea) {
         if (chiffreAffiche.indexOf(nombreAlea) !== -1 && nombreAlea != 0) {
             // console.log('la valeur existe');
@@ -41,116 +126,119 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
             // console.log('la valeur n\'existe pas');
             chiffreAffiche.push(nombreAlea);
+            ajoutChiffreGrille(nombreAlea);
         }
     };
 
     function ajoutChiffreGrille(nombreAlea) {
-        let caseRempli = 'p' + nombreAlea;
-        console.log(caseRempli);
-        // caseRempli.innerHTML = puzzles[puzzle][nombreAlea];
-        caseRempli.innerHTML = '0';
+        let idClass = (Object.values(classe))[nombreAlea];
+        let caseRempli = document.getElementById(idClass);
+        // console.log(idClass);
+        // console.log(caseRempli);
+        caseRempli.innerHTML = puzzles[puzzle][nombreAlea];
     }
+
 
     // ajout div et p
     gBloc.insertAdjacentHTML("afterbegin", `
     <div class="petit-bloc1">
-        <p class="first-line un"></p>
-        <p class="first-line deux"></p>
-        <p class="first-line trois right-line"></p>
-        <p class="first-line quatre"></p>
-        <p class="first-line cinq"></p>
-        <p class="first-line six right-line"></p>
-        <p class="first-line sept"></p>
-        <p class="first-line huit"></p>
-        <p class="first-line neuf"></p>
+        <p class="first-line un" id="un"></p>
+        <p class="first-line deux" id="deux"></p>
+        <p class="first-line trois right-line" id="trois"></p>
+        <p class="first-line quatre" id="quatre"></p>
+        <p class="first-line cinq" id="cinq"></p>
+        <p class="first-line six right-line" id="six"></p>
+        <p class="first-line sept" id="sept"></p>
+        <p class="first-line huit" id="huit"></p>
+        <p class="first-line neuf" id="neuf"></p>
     </div>
     <div class="petit-bloc2">
-        <p class="dix"></p>
-        <p class="onze"></p>
-        <p class="douze right-line"></p>
-        <p class="treize"></p>
-        <p class="quatorze"></p>
-        <p class="quinze right-line"></p>
-        <p class="seize"></p>
-        <p class="dix-sept"></p>
-        <p class="dix-huit"></p>
+        <p class="dix" id="dix"></p>
+        <p class="onze" id="onze"></p>
+        <p class="douze right-line" id="douze"></p>
+        <p class="treize" id="treize"></p>
+        <p class="quatorze" id="quatorze"></p>
+        <p class="quinze right-line" id="quinze"></p>
+        <p class="seize" id="seize"></p>
+        <p class="dix-sept" id="dix-sept"></p>
+        <p class="dix-huit" id="dix-huit"></p>
     </div>
     <div class="petit-bloc3">
-        <p class="dix-neuf bottom-line"></p>
-        <p class="vingt bottom-line"></p>
-        <p class="vingt-et-un right-line bottom-line"></p>
-        <p class="vingt-deux bottom-line"></p>
-        <p class="vingt-trois bottom-line"></p>
-        <p class="vingt-quatre right-line bottom-line"></p>
-        <p class="vingt-cinq bottom-line"></p>
-        <p class="vingt-six bottom-line"></p>
-        <p class="vingt-sept bottom-line"></p>
+        <p class="dix-neuf bottom-line" id="dix-neuf"></p>
+        <p class="vingt bottom-line" id="vingt"></p>
+        <p class="vingt-et-un right-line bottom-line" id="vingt-et-un"></p>
+        <p class="vingt-deux bottom-line" id="vingt-deux"></p>
+        <p class="vingt-trois bottom-line" id="vingt-trois"></p>
+        <p class="vingt-quatre right-line bottom-line" id="vingt-quatre"></p>
+        <p class="vingt-cinq bottom-line" id="vingt-cinq"></p>
+        <p class="vingt-six bottom-line" id="vingt-six"></p>
+        <p class="vingt-sept bottom-line" id="vingt-sept"></p>
     </div>
     <div class="petit-bloc4">
-        <p class="vingt-huit"></p>
-        <p class="vingt-neuf"></p>
-        <p class="trente right-line"></p>
-        <p class="trente-et-un"></p>
-        <p class="trente-deux"></p>
-        <p class="trente-trois right-line"></p>
-        <p class="trente-quatre"></p>
-        <p class="trente-cinq"></p>
-        <p class="trente-six"></p>
+        <p class="vingt-huit" id="vingt-huit"></p>
+        <p class="vingt-neuf" id="vingt-neuf"></p>
+        <p class="trente right-line" id="trente"></p>
+        <p class="trente-et-un" id="trente-et-un"></p>
+        <p class="trente-deux" id="trente-deux"></p>
+        <p class="trente-trois right-line" id="trente-trois"></p>
+        <p class="trente-quatre" id="trente-quatre"></p>
+        <p class="trente-cinq" id="trente-cinq"></p>
+        <p class="trente-six" id="trente-six"></p>
     </div>
     <div class="petit-bloc5">
-        <p class="trente-sept"></p>
-        <p class="trente-huit"></p>
-        <p class="trente-neuf right-line"></p>
-        <p class="quarante"></p>
-        <p class="quarante-et-un"></p>
-        <p class="quarante-deux right-line"></p>
-        <p class="quarante-trois"></p>
-        <p class="quarante-quatre"></p>
-        <p class="quarante-cinq"></p>
+        <p class="trente-sept" id="trente-sept"></p>
+        <p class="trente-huit" id="trente-huit"></p>
+        <p class="trente-neuf right-line" id="trente-neuf"></p>
+        <p class="quarante" id="quarante"></p>
+        <p class="quarante-et-un" id="quarante-et-un"></p>
+        <p class="quarante-deux right-line" id="quarante-deux"></p>
+        <p class="quarante-trois" id="quarante-trois"></p>
+        <p class="quarante-quatre" id="quarante-quatre"></p>
+        <p class="quarante-cinq" id="quarante-cinq"></p>
     </div>
     <div class="petit-bloc6">
-        <p class="quarante-six bottom-line"></p>
-        <p class="quarante-sept bottom-line"></p>
-        <p class="quarante-huit right-line bottom-line"></p>
-        <p class="quarante-neuf bottom-line"></p>
-        <p class="cinquante bottom-line"></p>
-        <p class="cinquante-et-un right-line bottom-line"></p>
-        <p class="cinquante-deux bottom-line"></p>
-        <p class="cinquante-trois bottom-line"></p>
-        <p class="cinquante-quatre bottom-line"></p>
+        <p class="quarante-six bottom-line" id="quarante-six"></p>
+        <p class="quarante-sept bottom-line" id="quarante-sept"></p>
+        <p class="quarante-huit right-line bottom-line" id="quarante-huit"></p>
+        <p class="quarante-neuf bottom-line" id="quarante-neuf"></p>
+        <p class="cinquante bottom-line" id="cinquante"></p>
+        <p class="cinquante-et-un right-line bottom-line" id="cinquante-et-un"></p>
+        <p class="cinquante-deux bottom-line" id="cinquante-deux"></p>
+        <p class="cinquante-trois bottom-line" id="cinquante-trois"></p>
+        <p class="cinquante-quatre bottom-line" id="cinquante-quatre"></p>
     </div>
     <div class="petit-bloc7">
-        <p class="cinquante-cinq"></p>
-        <p class="cinquante-six"></p>
-        <p class="cinquante-sept right-line"></p>
-        <p class="cinquante-huit"></p>
-        <p class="cinquante-neuf"></p>
-        <p class="soixante right-line"></p>
-        <p class="soixante-et-un"></p>
-        <p class="soixante-deux"></p>
-        <p class="soixante-trois"></p>
+        <p class="cinquante-cinq" id"cinquante-cinq"></p>
+        <p class="cinquante-six" id"cinquante-six"></p>
+        <p class="cinquante-sept right-line" id="cinquante-sept"></p>
+        <p class="cinquante-huit" id="cinquante-huit"></p>
+        <p class="cinquante-neuf" id="cinquante-neuf"></p>
+        <p class="soixante right-line" id="soixante"></p>
+        <p class="soixante-et-un" id="soixante-et-un"></p>
+        <p class="soixante-deux" id="soixante-deux"></p>
+        <p class="soixante-trois" id="soixante-trois"></p>
     </div>
     <div class="petit-bloc8">
-        <p class="soixante-quatre"></p>
-        <p class="soixante-cinq"></p>
-        <p class="soixante-six right-line"></p>
-        <p class="soixante-sept"></p>
-        <p class="soixante-huit"></p>
-        <p class="soixante-neuf right-line"></p>
-        <p class="soixante-dix"></p>
-        <p class="soixante-et-onze"></p>
-        <p class="soixante-douze"></p>
+        <p class="soixante-quatre" id="soixante-quatre"></p>
+        <p class="soixante-cinq" id="soixante-cinq"></p>
+        <p class="soixante-six right-line" id="soixante-six"></p>
+        <p class="soixante-sept" id="soixante-sept"></p>
+        <p class="soixante-huit" id="soixante-huit"></p>
+        <p class="soixante-neuf right-line" id="soixante-neuf"></p>
+        <p class="soixante-dix" id="soixante-dix"></p>
+        <p class="soixante-et-onze" id="soixante-et-onze"></p>
+        <p class="soixante-douze" id="soixante-douze"></p>
     </div>
     <div class="petit-bloc9">
-        <p class="last-line soixante-treize"></p>
-        <p class="last-line soixante-quatorze"></p>
-        <p class="last-line soixante-quinze right-line"></p>
-        <p class="last-line soixante-seize"></p>
-        <p class="last-line soixante-dix-sept"></p>
-        <p class="last-line soixante-dix-huit right-line"></p>
-        <p class="last-line soixante-dix-neuf"></p>
-        <p class="last-line quatre-vingt"></p>
-        <p class="last-line quatre-vingt-un"></p>
+        <p class="last-line soixante-treize" id="soixante-treize"></p>
+        <p class="last-line soixante-quatorze" id="soixante-quatorze"></p>
+        <p class="last-line soixante-quinze right-line" id="soixante-quinze"></p>
+        <p class="last-line soixante-seize" id="soixante-seize"></p>
+        <p class="last-line soixante-dix-sept" id="soixante-dix-sept"></p>
+        <p class="last-line soixante-dix-huit right-line" id="soixante-dix-huit"></p>
+        <p class="last-line soixante-dix-neuf" id="soixante-dix-neuf"></p>
+        <p class="last-line quatre-vingt" id="quatre-vingt"></p>
+        <p class="last-line quatre-vingt-un" id="quatre-vingt-un"></p>
     </div>`);
 
 
