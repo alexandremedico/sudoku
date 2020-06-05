@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function() {
         81 : 'quatre-vingt-un'
     }
 
-    
+
     // récupération et affichage
     socket.emit('valueSearch');
     socket.on('valueReception', function (valueContent) {
@@ -208,8 +208,8 @@ window.addEventListener("DOMContentLoaded", function() {
         <p class="cinquante-quatre bottom-line" id="cinquante-quatre"></p>
     </div>
     <div class="petit-bloc7">
-        <p class="cinquante-cinq" id"cinquante-cinq"></p>
-        <p class="cinquante-six" id"cinquante-six"></p>
+        <p class="cinquante-cinq" id="cinquante-cinq"></p>
+        <p class="cinquante-six" id="cinquante-six"></p>
         <p class="cinquante-sept right-line" id="cinquante-sept"></p>
         <p class="cinquante-huit" id="cinquante-huit"></p>
         <p class="cinquante-neuf" id="cinquante-neuf"></p>

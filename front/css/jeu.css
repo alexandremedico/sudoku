@@ -73,7 +73,8 @@ a {
 #nombre {
     display: flex;
     flex-direction: row;
-    margin-top: 7%;
+    margin-top: 12%;
+    justify-content: center;
 }
 
 #nombre p {
@@ -93,10 +94,14 @@ a {
 .time {
     font-family: 'Avocado';
     margin-left: 5%;
-    padding-bottom: 4%;
     font-size: 1.5rem;
+    margin-top: 8%;
 }
 
 .none {
     visibility: hidden;
+}
+
+.gros-bloc {
+    margin-top: 8%;
 }
