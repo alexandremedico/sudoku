@@ -18,6 +18,20 @@ document.getElementById('Retour').addEventListener('click', function () {
 window.addEventListener("DOMContentLoaded", function() {
     const socket = io();
 
+    let header = document.getElementById('lien');
+    socket.emit('changeBackground');
+    socket.on('changeColorBackground', function (checked) {
+        if (checked == true) {
+            // passer en mode sombre
+            console.log('je suis la');
+            header.href = '../css/menu-dark.css';
+        } else {
+            // passer en mode clair
+            console.log('je suis pas la');
+            header.href = '../css/style.css';
+        }
+    })
+
     // envoie de la difficulté
     document.getElementById('facile').addEventListener('click', function () {
         console.log(document.getElementById('facile').value);

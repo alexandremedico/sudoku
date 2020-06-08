@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Avocado';
+    src: url('../font/avocado_creamy/Avocado\ Creamy.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Avocado';
+    background-color: black;
+    color: white;
+}
+
+.game {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game ul li {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 60%;
+    font-size: 2rem;
+}
+
+#sidebarMenu ul li {
+    list-style: none;
+    text-align: center;
+    font-size: 2rem;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#new-game {
+    cursor: pointer;
+}
+
+.continue {
+    opacity: 0.5;
+}
+
+/* menu burger */
+.hidden {
+    visibility: hidden;
+}
+.visible {
+    position: absolute;
+    top: 13%;
+    width: 100%;
+}
+
+#sidebarMenu {
+    z-index: 1;
+    width: 100%;
+    background-color: #1C1A1A;
+}
+
+.slide-in-right {
+	animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right-reverse {
+	animation: slide-in-right-reverse 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+@keyframes slide-in-right-reverse {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.none {
+    visibility: hidden;
+}

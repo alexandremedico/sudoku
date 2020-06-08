@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 
 // socket.io
 let value = '';
+let checked;
 io.on('connection', function (socket) {
     // console.log('socket open');
     socket.on('value', function (valueContent) {
@@ -28,6 +29,17 @@ io.on('connection', function (socket) {
     socket.on('valueSearch', function () {
         console.log(value);
         socket.emit('valueReception', value);
+    })
+
+    socket.on('changeColor', function (buttonCkecked) {
+        // console.log(buttonCkecked)
+        checked = buttonCkecked;
+        socket.emit('changeColorBackground', checked);
+    })
+
+    socket.on('changeBackground', function () {
+        // console.log(checked);
+        socket.emit('changeColorBackground', checked);
     })
 })
 
