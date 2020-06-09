@@ -105,3 +105,10 @@ a {
 .gros-bloc {
     margin-top: 8%;
 }
+
+#checkValidResponse {
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+}

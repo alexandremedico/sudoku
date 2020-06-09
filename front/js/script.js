@@ -146,10 +146,28 @@ window.addEventListener("DOMContentLoaded", function() {
     function ajoutChiffreGrille(nombreAlea) {
         let idClass = (Object.values(classe))[nombreAlea];
         let caseRempli = document.getElementById(idClass);
-        // console.log(idClass);
-        // console.log(caseRempli);
         caseRempli.innerHTML = puzzles[puzzle][nombreAlea];
     }
+
+    // vérification si sudoku bon
+    let verifSudoku = document.getElementById('checkValidResponse');
+    let valid = [];
+    let checkpuzzle = [];
+    verifSudoku.addEventListener('click', function () {
+        // alert('je suis la');
+        for (let i = 0; i < 81; i++) {
+            valid = document.getElementById((Object.values(classe))[i]);
+            // console.log(valid.textContent);
+            checkpuzzle = puzzles[puzzle][i];
+            console.log(valid.textContent);
+            console.log(checkpuzzle);
+            if (valid.textContent == checkpuzzle) {
+                // alert('ok')
+            } else {
+                // alert('not ok')
+            }
+        }
+    })
 
 
     // ajout div et p
@@ -539,528 +557,610 @@ window.addEventListener("DOMContentLoaded", function() {
     let last;
     function ajoutNombre() {
         last = nombre[nombre.length - 1];
-        nombreBloc.addEventListener('click', function () {
-            if (event.clientX >= 0 && event.clientX <= 43 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = un;
-            } else if (event.clientX >= 44 && event.clientX <= 84 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = deux;
-            } else if (event.clientX >= 85 && event.clientX <= 125 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = trois;
-            } else if (event.clientX >= 126 && event.clientX <= 166 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = quatre;
-            } else if (event.clientX >= 167 && event.clientX <= 207 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = cinq;
-            } else if (event.clientX >= 208 && event.clientX <= 248 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = six;
-            } else if (event.clientX >= 249 && event.clientX <= 289 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = sept;
-            } else if (event.clientX >= 290 && event.clientX <= 330 && event.clientY >= 470 && event.clientY <= 507){
-                last.innerHTML = "";
-                last.innerHTML = huit;
-            } else if (event.clientX >= 331 && event.clientX <= 371 && event.clientY >= 470 && event.clientY <= 507) {
-                last.innerHTML = "";
-                last.innerHTML = neuf;
-            }
+        document.getElementById('chiffreUn').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = un;
+        })
+        document.getElementById('chiffreDeux').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = deux;
+        })
+        document.getElementById('chiffreTrois').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = trois;
+        })
+        document.getElementById('chiffreQuatre').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = quatre;
+        })
+        document.getElementById('chiffreCinq').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = cinq;
+        })
+        document.getElementById('chiffreSix').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = six;
+        })
+        document.getElementById('chiffreSept').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = sept;
+        })
+        document.getElementById('chiffreHuit').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = huit;
+        })
+        document.getElementById('chiffreNeuf').addEventListener('click', function() {
+            last.innerHTML = "";
+            last.innerHTML = neuf;
         })
     }
     
     // ajoute la séléction d'une case
-    gBloc.addEventListener('click', function () {
-        if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p1.classList.add('fond-case');
-            last = "";
-            nombre.push(p1);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p2.classList.add('fond-case');
-            last = "";
-            nombre.push(p2);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p3.classList.add('fond-case');
-            last = "";
-            nombre.push(p3);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p4.classList.add('fond-case');
-            last = "";
-            nombre.push(p4);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p5.classList.add('fond-case');
-            last = "";
-            nombre.push(p5);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p6.classList.add('fond-case');
-            last = "";
-            nombre.push(p6);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p7.classList.add('fond-case');
-            last = "";
-            nombre.push(p7);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p8.classList.add('fond-case');
-            last = "";
-            nombre.push(p8);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 68 && event.clientY <= 112) {
-            removeClass();
-            p9.classList.add('fond-case');
-            last = "";
-            nombre.push(p9);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p10.classList.add('fond-case');
-            last = "";
-            nombre.push(p10);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p11.classList.add('fond-case');
-            last = "";
-            nombre.push(p11);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p12.classList.add('fond-case');
-            last = "";
-            nombre.push(p12);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p13.classList.add('fond-case');
-            last = "";
-            nombre.push(p13);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p14.classList.add('fond-case');
-            last = "";
-            nombre.push(p14);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p15.classList.add('fond-case');
-            last = "";
-            nombre.push(p15);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p16.classList.add('fond-case');
-            last = "";
-            nombre.push(p16);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p17.classList.add('fond-case');
-            last = "";
-            nombre.push(p17);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 112 && event.clientY <= 153) {
-            removeClass();
-            p18.classList.add('fond-case');
-            last = "";
-            nombre.push(p18);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p19.classList.add('fond-case');
-            last = "";
-            nombre.push(p19);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p20.classList.add('fond-case');
-            last = "";
-            nombre.push(p20);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p21.classList.add('fond-case');
-            last = "";
-            nombre.push(p21);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p22.classList.add('fond-case');
-            last = "";
-            nombre.push(p22);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p23.classList.add('fond-case');
-            last = "";
-            nombre.push(p23);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p24.classList.add('fond-case');
-            last = "";
-            nombre.push(p24);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p25.classList.add('fond-case');
-            last = "";
-            nombre.push(p25);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p26.classList.add('fond-case');
-            last = "";
-            nombre.push(p26);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 154 && event.clientY <= 195) {
-            removeClass();
-            p27.classList.add('fond-case');
-            last = "";
-            nombre.push(p27);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p28.classList.add('fond-case');
-            last = "";
-            nombre.push(p28);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p29.classList.add('fond-case');
-            last = "";
-            nombre.push(p29);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p30.classList.add('fond-case');
-            last = "";
-            nombre.push(p30);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p31.classList.add('fond-case');
-            last = "";
-            nombre.push(p31);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p32.classList.add('fond-case');
-            last = "";
-            nombre.push(p32);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p33.classList.add('fond-case');
-            last = "";
-            nombre.push(p33);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p34.classList.add('fond-case');
-            last = "";
-            nombre.push(p34);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p35.classList.add('fond-case');
-            last = "";
-            nombre.push(p35);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 196 && event.clientY <= 237) {
-            removeClass();
-            p36.classList.add('fond-case');
-            last = "";
-            nombre.push(p36);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p37.classList.add('fond-case');
-            last = "";
-            nombre.push(p37);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p38.classList.add('fond-case');
-            last = "";
-            nombre.push(p38);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p39.classList.add('fond-case');
-            last = "";
-            nombre.push(p39);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p40.classList.add('fond-case');
-            last = "";
-            nombre.push(p40);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p41.classList.add('fond-case');
-            last = "";
-            nombre.push(p41);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p42.classList.add('fond-case');
-            last = "";
-            nombre.push(p42);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p43.classList.add('fond-case');
-            last = "";
-            nombre.push(p43);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p44.classList.add('fond-case');
-            last = "";
-            nombre.push(p44);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 238 && event.clientY <= 279) {
-            removeClass();
-            p45.classList.add('fond-case');
-            last = "";
-            nombre.push(p45);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p46.classList.add('fond-case');
-            last = "";
-            nombre.push(p46);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p47.classList.add('fond-case');
-            last = "";
-            nombre.push(p47);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p48.classList.add('fond-case');
-            last = "";
-            nombre.push(p48);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p49.classList.add('fond-case');
-            last = "";
-            nombre.push(p49);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p50.classList.add('fond-case');
-            last = "";
-            nombre.push(p50);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p51.classList.add('fond-case');
-            last = "";
-            nombre.push(p51);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p52.classList.add('fond-case');
-            last = "";
-            nombre.push(p52);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p53.classList.add('fond-case');
-            last = "";
-            nombre.push(p53);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 280 && event.clientY <= 321) {
-            removeClass();
-            p54.classList.add('fond-case');
-            last = "";
-            nombre.push(p54);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p55.classList.add('fond-case');
-            last = "";
-            nombre.push(p55);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p56.classList.add('fond-case');
-            last = "";
-            nombre.push(p56);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p57.classList.add('fond-case');
-            last = "";
-            nombre.push(p57);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p58.classList.add('fond-case');
-            last = "";
-            nombre.push(p58);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p59.classList.add('fond-case');
-            last = "";
-            nombre.push(p59);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p60.classList.add('fond-case');
-            last = "";
-            nombre.push(p60);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p61.classList.add('fond-case');
-            last = "";
-            nombre.push(p61);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p62.classList.add('fond-case');
-            last = "";
-            nombre.push(p62);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 322 && event.clientY <= 363) {
-            removeClass();
-            p63.classList.add('fond-case');
-            last = "";
-            nombre.push(p63);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p64.classList.add('fond-case');
-            last = "";
-            nombre.push(p64);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p65.classList.add('fond-case');
-            last = "";
-            nombre.push(p65);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p66.classList.add('fond-case');
-            last = "";
-            nombre.push(p66);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p67.classList.add('fond-case');
-            last = "";
-            nombre.push(p67);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p68.classList.add('fond-case');
-            last = "";
-            nombre.push(p68);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p69.classList.add('fond-case');
-            last = "";
-            nombre.push(p69);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p70.classList.add('fond-case');
-            last = "";
-            nombre.push(p70);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p71.classList.add('fond-case');
-            last = "";
-            nombre.push(p71);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 364 && event.clientY <= 405) {
-            removeClass();
-            p72.classList.add('fond-case');
-            last = "";
-            nombre.push(p72);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 1 && event.clientX <= 43 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p73.classList.add('fond-case');
-            last = "";
-            nombre.push(p73);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 42 && event.clientX <= 81 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p74.classList.add('fond-case');
-            last = "";
-            nombre.push(p74);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 83 && event.clientX <= 124 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p75.classList.add('fond-case');
-            last = "";
-            nombre.push(p75);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 125 && event.clientX <= 166 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p76.classList.add('fond-case');
-            last = "";
-            nombre.push(p76);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 167 && event.clientX <= 208 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p77.classList.add('fond-case');
-            last = "";
-            nombre.push(p77);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 209 && event.clientX <= 250 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p78.classList.add('fond-case');
-            last = "";
-            nombre.push(p78);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 251 && event.clientX <= 292 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p79.classList.add('fond-case');
-            last = "";
-            nombre.push(p79);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 293 && event.clientX <= 334 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p80.classList.add('fond-case');
-            last = "";
-            nombre.push(p80);
-            ajoutNombre(nombre);
-        } else if (event.clientX >= 335 && event.clientX <= 376 && event.clientY >= 406 && event.clientY <= 449) {
-            removeClass();
-            p81.classList.add('fond-case');
-            last = "";
-            nombre.push(p81);
-            ajoutNombre(nombre);
-        } else {
-            alert()
-        }
+    document.getElementById('un').addEventListener('click', function() {
+        removeClass();
+        p1.classList.add('fond-case');
+        last = "";
+        nombre.push(p1);
+        ajoutNombre(nombre);
+    }) 
+    document.getElementById('deux').addEventListener('click', function() {
+        removeClass();
+        p2.classList.add('fond-case');
+        last = "";
+        nombre.push(p2);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trois').addEventListener('click', function() {
+        removeClass();
+        p3.classList.add('fond-case');
+        last = "";
+        nombre.push(p3);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quatre').addEventListener('click', function() {
+        removeClass();
+        p4.classList.add('fond-case');
+        last = "";
+        nombre.push(p4);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinq').addEventListener('click', function() {
+        removeClass();
+        p5.classList.add('fond-case');
+        last = "";
+        nombre.push(p5);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('six').addEventListener('click', function() {
+        removeClass();
+        p6.classList.add('fond-case');
+        last = "";
+        nombre.push(p6);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('sept').addEventListener('click', function() {
+        removeClass();
+        p7.classList.add('fond-case');
+        last = "";
+        nombre.push(p7);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('huit').addEventListener('click', function() {
+        removeClass();
+        p8.classList.add('fond-case');
+        last = "";
+        nombre.push(p8);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('neuf').addEventListener('click', function() {
+        removeClass();
+        p9.classList.add('fond-case');
+        last = "";
+        nombre.push(p9);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('dix').addEventListener('click', function() {
+        removeClass();
+        p10.classList.add('fond-case');
+        last = "";
+        nombre.push(p10);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('onze').addEventListener('click', function() {
+        removeClass();
+        p11.classList.add('fond-case');
+        last = "";
+        nombre.push(p11);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('douze').addEventListener('click', function() {
+        removeClass();
+        p12.classList.add('fond-case');
+        last = "";
+        nombre.push(p12);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('treize').addEventListener('click', function() {
+        removeClass();
+        p13.classList.add('fond-case');
+        last = "";
+        nombre.push(p13);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quatorze').addEventListener('click', function() {
+        removeClass();
+        p14.classList.add('fond-case');
+        last = "";
+        nombre.push(p14);
+        ajoutNombre(nombre);
+    }) 
+    document.getElementById('quinze').addEventListener('click', function() {
+        removeClass();
+        p15.classList.add('fond-case');
+        last = "";
+        nombre.push(p15);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('seize').addEventListener('click', function() {
+        removeClass();
+        p16.classList.add('fond-case');
+        last = "";
+        nombre.push(p16);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('dix-sept').addEventListener('click', function() {
+        removeClass();
+        p17.classList.add('fond-case');
+        last = "";
+        nombre.push(p17);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('dix-huit').addEventListener('click', function() {
+        removeClass();
+        p18.classList.add('fond-case');
+        last = "";
+        nombre.push(p18);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('dix-neuf').addEventListener('click', function() {
+        removeClass();
+        p19.classList.add('fond-case');
+        last = "";
+        nombre.push(p19);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt').addEventListener('click', function() {
+        removeClass();
+        p20.classList.add('fond-case');
+        last = "";
+        nombre.push(p20);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-et-un').addEventListener('click', function() {
+        removeClass();
+        p21.classList.add('fond-case');
+        last = "";
+        nombre.push(p21);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-deux').addEventListener('click', function() {
+        removeClass();
+        p22.classList.add('fond-case');
+        last = "";
+        nombre.push(p22);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-trois').addEventListener('click', function() {
+        removeClass();
+        p23.classList.add('fond-case');
+        last = "";
+        nombre.push(p23);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-quatre').addEventListener('click', function() {
+        removeClass();
+        p24.classList.add('fond-case');
+        last = "";
+        nombre.push(p24);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-cinq').addEventListener('click', function() {
+        removeClass();
+        p25.classList.add('fond-case');
+        last = "";
+        nombre.push(p25);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-six').addEventListener('click', function() {
+        removeClass();
+        p26.classList.add('fond-case');
+        last = "";
+        nombre.push(p26);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-sept').addEventListener('click', function() {
+        removeClass();
+        p27.classList.add('fond-case');
+        last = "";
+        nombre.push(p27);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-huit').addEventListener('click', function() {
+        removeClass();
+        p28.classList.add('fond-case');
+        last = "";
+        nombre.push(p28);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('vingt-neuf').addEventListener('click', function() {
+        removeClass();
+        p29.classList.add('fond-case');
+        last = "";
+        nombre.push(p29);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente').addEventListener('click', function() {
+        removeClass();
+        p30.classList.add('fond-case');
+        last = "";
+        nombre.push(p30);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-et-un').addEventListener('click', function() {
+        removeClass();
+        p31.classList.add('fond-case');
+        last = "";
+        nombre.push(p31);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-deux').addEventListener('click', function() {
+        removeClass();
+        p32.classList.add('fond-case');
+        last = "";
+        nombre.push(p32);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-trois').addEventListener('click', function() {
+        removeClass();
+        p33.classList.add('fond-case');
+        last = "";
+        nombre.push(p33);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-quatre').addEventListener('click', function() {
+        removeClass();
+        p34.classList.add('fond-case');
+        last = "";
+        nombre.push(p34);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-cinq').addEventListener('click', function() {
+        removeClass();
+        p35.classList.add('fond-case');
+        last = "";
+        nombre.push(p35);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-six').addEventListener('click', function() {
+        removeClass();
+        p36.classList.add('fond-case');
+        last = "";
+        nombre.push(p36);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-sept').addEventListener('click', function() {
+        removeClass();
+        p37.classList.add('fond-case');
+        last = "";
+        nombre.push(p37);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-huit').addEventListener('click', function() {
+        removeClass();
+        p38.classList.add('fond-case');
+        last = "";
+        nombre.push(p38);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('trente-neuf').addEventListener('click', function() {
+        removeClass();
+        p39.classList.add('fond-case');
+        last = "";
+        nombre.push(p39);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante').addEventListener('click', function() {
+        removeClass();
+        p40.classList.add('fond-case');
+        last = "";
+        nombre.push(p40);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-et-un').addEventListener('click', function() {
+        removeClass();
+        p41.classList.add('fond-case');
+        last = "";
+        nombre.push(p41);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-deux').addEventListener('click', function() {
+        removeClass();
+        p42.classList.add('fond-case');
+        last = "";
+        nombre.push(p42);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-trois').addEventListener('click', function() {
+        removeClass();
+        p43.classList.add('fond-case');
+        last = "";
+        nombre.push(p43);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-quatre').addEventListener('click', function() {
+        removeClass();
+        p44.classList.add('fond-case');
+        last = "";
+        nombre.push(p44);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-cinq').addEventListener('click', function() {
+        removeClass();
+        p45.classList.add('fond-case');
+        last = "";
+        nombre.push(p45);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-six').addEventListener('click', function() {
+        removeClass();
+        p46.classList.add('fond-case');
+        last = "";
+        nombre.push(p46);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-sept').addEventListener('click', function() {
+        removeClass();
+        p47.classList.add('fond-case');
+        last = "";
+        nombre.push(p47);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-huit').addEventListener('click', function() {
+        removeClass();
+        p48.classList.add('fond-case');
+        last = "";
+        nombre.push(p48);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quarante-neuf').addEventListener('click', function() {
+        removeClass();
+        p49.classList.add('fond-case');
+        last = "";
+        nombre.push(p49);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante').addEventListener('click', function() {
+        removeClass();
+        p50.classList.add('fond-case');
+        last = "";
+        nombre.push(p50);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-et-un').addEventListener('click', function() {
+        removeClass();
+        p51.classList.add('fond-case');
+        last = "";
+        nombre.push(p51);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-deux').addEventListener('click', function() {
+        removeClass();
+        p52.classList.add('fond-case');
+        last = "";
+        nombre.push(p52);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-trois').addEventListener('click', function() {
+        removeClass();
+        p53.classList.add('fond-case');
+        last = "";
+        nombre.push(p53);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-quatre').addEventListener('click', function() {
+        removeClass();
+        p54.classList.add('fond-case');
+        last = "";
+        nombre.push(p54);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-cinq').addEventListener('click', function() {
+        removeClass();
+        p55.classList.add('fond-case');
+        last = "";
+        nombre.push(p55);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-six').addEventListener('click', function() {
+        removeClass();
+        p56.classList.add('fond-case');
+        last = "";
+        nombre.push(p56);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-sept').addEventListener('click', function() {
+        removeClass();
+        p57.classList.add('fond-case');
+        last = "";
+        nombre.push(p57);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-huit').addEventListener('click', function() {
+        removeClass();
+        p58.classList.add('fond-case');
+        last = "";
+        nombre.push(p58);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('cinquante-neuf').addEventListener('click', function() {
+        removeClass();
+        p59.classList.add('fond-case');
+        last = "";
+        nombre.push(p59);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante').addEventListener('click', function() {
+        removeClass();
+        p60.classList.add('fond-case');
+        last = "";
+        nombre.push(p60);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-et-un').addEventListener('click', function() {
+        removeClass();
+        p61.classList.add('fond-case');
+        last = "";
+        nombre.push(p61);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-deux').addEventListener('click', function() {
+        removeClass();
+        p62.classList.add('fond-case');
+        last = "";
+        nombre.push(p62);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-trois').addEventListener('click', function() {
+        removeClass();
+        p63.classList.add('fond-case');
+        last = "";
+        nombre.push(p63);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-quatre').addEventListener('click', function() {
+        removeClass();
+        p64.classList.add('fond-case');
+        last = "";
+        nombre.push(p64);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-cinq').addEventListener('click', function() {
+        removeClass();
+        p65.classList.add('fond-case');
+        last = "";
+        nombre.push(p65);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-six').addEventListener('click', function() {
+        removeClass();
+        p66.classList.add('fond-case');
+        last = "";
+        nombre.push(p66);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-sept').addEventListener('click', function() {
+        removeClass();
+        p67.classList.add('fond-case');
+        last = "";
+        nombre.push(p67);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-huit').addEventListener('click', function() {
+        removeClass();
+        p68.classList.add('fond-case');
+        last = "";
+        nombre.push(p68);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-neuf').addEventListener('click', function() {
+        removeClass();
+        p69.classList.add('fond-case');
+        last = "";
+        nombre.push(p69);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-dix').addEventListener('click', function() {
+        removeClass();
+        p70.classList.add('fond-case');
+        last = "";
+        nombre.push(p70);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-et-onze').addEventListener('click', function() {
+        removeClass();
+        p71.classList.add('fond-case');
+        last = "";
+        nombre.push(p71);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-douze').addEventListener('click', function() {
+        removeClass();
+        p72.classList.add('fond-case');
+        last = "";
+        nombre.push(p72);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-treize').addEventListener('click', function() {
+        removeClass();
+        p73.classList.add('fond-case');
+        last = "";
+        nombre.push(p73);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-quatorze').addEventListener('click', function() {
+        removeClass();
+        p74.classList.add('fond-case');
+        last = "";
+        nombre.push(p74);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-quinze').addEventListener('click', function() {
+        removeClass();
+        p75.classList.add('fond-case');
+        last = "";
+        nombre.push(p75);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-seize').addEventListener('click', function() {
+        removeClass();
+        p76.classList.add('fond-case');
+        last = "";
+        nombre.push(p76);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-dix-sept').addEventListener('click', function() {
+        removeClass();
+        p77.classList.add('fond-case');
+        last = "";
+        nombre.push(p77);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-dix-huit').addEventListener('click', function() {
+        removeClass();
+        p78.classList.add('fond-case');
+        last = "";
+        nombre.push(p78);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('soixante-dix-neuf').addEventListener('click', function() {
+        removeClass();
+        p79.classList.add('fond-case');
+        last = "";
+        nombre.push(p79);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quatre-vingt').addEventListener('click', function() {
+        removeClass();
+        p80.classList.add('fond-case');
+        last = "";
+        nombre.push(p80);
+        ajoutNombre(nombre);
+    })
+    document.getElementById('quatre-vingt-un').addEventListener('click', function() {
+        removeClass();
+        p81.classList.add('fond-case');
+        last = "";
+        nombre.push(p81);
+        ajoutNombre(nombre);
     })
 })
