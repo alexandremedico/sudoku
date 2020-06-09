@@ -98,6 +98,19 @@ window.addEventListener("DOMContentLoaded", function() {
         81 : 'quatre-vingt-un'
     }
 
+    // dark mode
+    let header = document.getElementById('lien');
+    socket.emit('changeBackground');
+    socket.on('changeColorBackground', function (checked) {
+        if (checked == true) {
+            // passer en mode sombre
+            header.href = '../css/jeu-dark.css';
+        } else {
+            // passer en mode clair
+            header.href = '../css/jeu.css';
+        }
+    })
+
 
     // récupération et affichage
     socket.emit('valueSearch');

@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Avocado';
+    src: url('../font/avocado_creamy/Avocado\ Creamy.ttf') format('truetype');
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.petit-bloc1,.petit-bloc2, .petit-bloc3, .petit-bloc4, .petit-bloc5, .petit-bloc6, .petit-bloc7, .petit-bloc8, .petit-bloc9 {
+    display: flex;
+    flex-direction: row;
+}
+
+.gros-bloc p {
+    font-size: 2rem;
+    text-align: center;
+    height: 6vh;
+    width: 10vh;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.first-line {
+    border-top: 3px solid white;
+}
+
+.last-line {
+    border-bottom: 3px solid white!important;
+}
+
+.right-line {
+    border-right: 1px solid white;
+}
+
+.bottom-line {
+    border-bottom: 2px solid white!important;
+}
+
+.gros-bloc p:last-child {
+    border-right: 3px solid white;
+    margin-right: 0;
+}
+
+.gros-bloc p:first-child {
+    border-left: 3px solid white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Avocado';
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.retour {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nombre {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12%;
+    justify-content: center;
+}
+
+#nombre p {
+    font-size: 2rem;
+    text-align: center;
+    border-radius:50%;
+    width: 36px;
+    height: 36px;
+    border: 2px solid white;
+    margin-left: 0.5%;
+}
+
+.fond-case {
+    background-color: lightskyblue;
+}
+
+.time {
+    font-family: 'Avocado';
+    margin-left: 5%;
+    font-size: 1.5rem;
+    margin-top: 8%;
+    color: white;
+}
+
+.none {
+    visibility: hidden;
+}
+
+.gros-bloc {
+    margin-top: 8%;
+}
