@@ -156,7 +156,7 @@ window.addEventListener("DOMContentLoaded", function() {
     let zero = 0;
     let valueErreur;
     verifSudoku.addEventListener('click', function () {
-        
+        zero = 0;
         for (let i = 0; i < 81; i++) {
             valid = document.getElementById((Object.values(classe))[i]);
             checkpuzzle = puzzles[puzzle][i];
@@ -195,6 +195,7 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById('alertVerifPasBon').addEventListener('click', function name() {
         document.getElementById('alertVerifPasBon').classList.add('none');
         setInterval(interval);
+        document.getElementById('alertVerifPasBon').classList.remove('bounce-in-top');
     })    
 
 
