@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 // socket.io
 let value = '';
 let checked;
+let zero;
 io.on('connection', function (socket) {
     // console.log('socket open');
     socket.on('value', function (valueContent) {
@@ -27,7 +28,7 @@ io.on('connection', function (socket) {
     })
 
     socket.on('valueSearch', function () {
-        console.log(value);
+        // console.log(value);
         socket.emit('valueReception', value);
     })
 
@@ -40,6 +41,12 @@ io.on('connection', function (socket) {
     socket.on('changeBackground', function () {
         // console.log(checked);
         socket.emit('changeColorBackground', checked);
+    })
+
+    // récupération du nombre d'erreur dans le sudoku
+    socket.on('nombreErreur', function (zero) {
+        zero = zero;
+        socket.emit('erreur', zero);
     })
 })
 

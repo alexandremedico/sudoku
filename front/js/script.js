@@ -153,21 +153,45 @@ window.addEventListener("DOMContentLoaded", function() {
     let verifSudoku = document.getElementById('checkValidResponse');
     let valid = [];
     let checkpuzzle = [];
+    let zero = 0;
+    let valueErreur;
     verifSudoku.addEventListener('click', function () {
-        // alert('je suis la');
+        
         for (let i = 0; i < 81; i++) {
             valid = document.getElementById((Object.values(classe))[i]);
-            // console.log(valid.textContent);
             checkpuzzle = puzzles[puzzle][i];
-            console.log(valid.textContent);
-            console.log(checkpuzzle);
+            // console.log(valid.textContent);
+            // console.log(checkpuzzle);
             if (valid.textContent == checkpuzzle) {
-                // alert('ok')
+                // alert('ok');
             } else {
-                // alert('not ok')
+                // alert('not ok');
+                zero++;
             }
         }
+        socket.emit('nombreErreur', zero)
+        if (zero != 0) {
+            // alert('pas bon');
+            document.getElementById('alertVerifPasBon').classList.remove('none');
+            socket.on('erreur', function (zero) {
+                valueErreur = document.getElementById('erreur');
+                valueErreur.innerHTML = zero;
+            })
+        } else {
+            // alert('bon');
+            document.getElementById('alertVerifBon').classList.remove('none');
+            clearInterval(interval);
+            let timer = document.getElementById('timer').textContent;
+            let timerScore = document.getElementById('timeScore');
+            console.log(timerScore);
+            timerScore.innerHTML = timer;
+        }
     })
+
+    // fermer le pop up
+    document.getElementById('alertVerifPasBon').addEventListener('click', function name(params) {
+        document.getElementById('alertVerifPasBon').classList.add('none');
+    })    
 
 
     // ajout div et p
@@ -385,87 +409,87 @@ window.addEventListener("DOMContentLoaded", function() {
     console.log(puzzle);
     // console.log(puzzles[puzzle][0]);
 
-    // p1.innerHTML = puzzles[puzzle][0];
-    // p2.innerHTML = puzzles[puzzle][1];
-    // p3.innerHTML = puzzles[puzzle][2];
-    // p4.innerHTML = puzzles[puzzle][3];
-    // p5.innerHTML = puzzles[puzzle][4];
-    // p6.innerHTML = puzzles[puzzle][5];
-    // p7.innerHTML = puzzles[puzzle][6];
-    // p8.innerHTML = puzzles[puzzle][7];
-    // p9.innerHTML = puzzles[puzzle][8];
-    // p10.innerHTML = puzzles[puzzle][9];
-    // p11.innerHTML = puzzles[puzzle][10];
-    // p12.innerHTML = puzzles[puzzle][11];
-    // p13.innerHTML = puzzles[puzzle][12];
-    // p14.innerHTML = puzzles[puzzle][13];
-    // p15.innerHTML = puzzles[puzzle][14];
-    // p16.innerHTML = puzzles[puzzle][15];
-    // p17.innerHTML = puzzles[puzzle][16];
-    // p18.innerHTML = puzzles[puzzle][17];
-    // p19.innerHTML = puzzles[puzzle][18];
-    // p20.innerHTML = puzzles[puzzle][19];
-    // p21.innerHTML = puzzles[puzzle][20];
-    // p22.innerHTML = puzzles[puzzle][21];
-    // p23.innerHTML = puzzles[puzzle][22];
-    // p24.innerHTML = puzzles[puzzle][23];
-    // p25.innerHTML = puzzles[puzzle][24];
-    // p26.innerHTML = puzzles[puzzle][25];
-    // p27.innerHTML = puzzles[puzzle][26];
-    // p28.innerHTML = puzzles[puzzle][27];
-    // p29.innerHTML = puzzles[puzzle][28];
-    // p30.innerHTML = puzzles[puzzle][29];
-    // p31.innerHTML = puzzles[puzzle][30];
-    // p32.innerHTML = puzzles[puzzle][31];
-    // p33.innerHTML = puzzles[puzzle][32];
-    // p34.innerHTML = puzzles[puzzle][33];
-    // p35.innerHTML = puzzles[puzzle][34];
-    // p36.innerHTML = puzzles[puzzle][35];
-    // p37.innerHTML = puzzles[puzzle][36];
-    // p38.innerHTML = puzzles[puzzle][37];
-    // p39.innerHTML = puzzles[puzzle][38];
-    // p40.innerHTML = puzzles[puzzle][39];
-    // p41.innerHTML = puzzles[puzzle][40];
-    // p42.innerHTML = puzzles[puzzle][41];
-    // p43.innerHTML = puzzles[puzzle][42];
-    // p44.innerHTML = puzzles[puzzle][43];
-    // p45.innerHTML = puzzles[puzzle][44];
-    // p46.innerHTML = puzzles[puzzle][45];
-    // p47.innerHTML = puzzles[puzzle][46];
-    // p48.innerHTML = puzzles[puzzle][47];
-    // p49.innerHTML = puzzles[puzzle][48];
-    // p50.innerHTML = puzzles[puzzle][49];
-    // p51.innerHTML = puzzles[puzzle][50];
-    // p52.innerHTML = puzzles[puzzle][51];
-    // p53.innerHTML = puzzles[puzzle][52];
-    // p54.innerHTML = puzzles[puzzle][53];
-    // p55.innerHTML = puzzles[puzzle][54];
-    // p56.innerHTML = puzzles[puzzle][55];
-    // p57.innerHTML = puzzles[puzzle][56];
-    // p58.innerHTML = puzzles[puzzle][57];
-    // p59.innerHTML = puzzles[puzzle][58];
-    // p60.innerHTML = puzzles[puzzle][59];
-    // p61.innerHTML = puzzles[puzzle][60];
-    // p62.innerHTML = puzzles[puzzle][61];
-    // p63.innerHTML = puzzles[puzzle][62];
-    // p64.innerHTML = puzzles[puzzle][63];
-    // p65.innerHTML = puzzles[puzzle][64];
-    // p66.innerHTML = puzzles[puzzle][65];
-    // p67.innerHTML = puzzles[puzzle][66];
-    // p68.innerHTML = puzzles[puzzle][67];
-    // p69.innerHTML = puzzles[puzzle][68];
-    // p70.innerHTML = puzzles[puzzle][69];
-    // p71.innerHTML = puzzles[puzzle][70];
-    // p72.innerHTML = puzzles[puzzle][71];
-    // p73.innerHTML = puzzles[puzzle][72];
-    // p74.innerHTML = puzzles[puzzle][73];
-    // p75.innerHTML = puzzles[puzzle][74];
-    // p76.innerHTML = puzzles[puzzle][75];
-    // p77.innerHTML = puzzles[puzzle][76];
-    // p78.innerHTML = puzzles[puzzle][77];
-    // p79.innerHTML = puzzles[puzzle][78];
-    // p80.innerHTML = puzzles[puzzle][79];
-    // p81.innerHTML = puzzles[puzzle][80];
+    p1.innerHTML = puzzles[puzzle][0];
+    p2.innerHTML = puzzles[puzzle][1];
+    p3.innerHTML = puzzles[puzzle][2];
+    p4.innerHTML = puzzles[puzzle][3];
+    p5.innerHTML = puzzles[puzzle][4];
+    p6.innerHTML = puzzles[puzzle][5];
+    p7.innerHTML = puzzles[puzzle][6];
+    p8.innerHTML = puzzles[puzzle][7];
+    p9.innerHTML = puzzles[puzzle][8];
+    p10.innerHTML = puzzles[puzzle][9];
+    p11.innerHTML = puzzles[puzzle][10];
+    p12.innerHTML = puzzles[puzzle][11];
+    p13.innerHTML = puzzles[puzzle][12];
+    p14.innerHTML = puzzles[puzzle][13];
+    p15.innerHTML = puzzles[puzzle][14];
+    p16.innerHTML = puzzles[puzzle][15];
+    p17.innerHTML = puzzles[puzzle][16];
+    p18.innerHTML = puzzles[puzzle][17];
+    p19.innerHTML = puzzles[puzzle][18];
+    p20.innerHTML = puzzles[puzzle][19];
+    p21.innerHTML = puzzles[puzzle][20];
+    p22.innerHTML = puzzles[puzzle][21];
+    p23.innerHTML = puzzles[puzzle][22];
+    p24.innerHTML = puzzles[puzzle][23];
+    p25.innerHTML = puzzles[puzzle][24];
+    p26.innerHTML = puzzles[puzzle][25];
+    p27.innerHTML = puzzles[puzzle][26];
+    p28.innerHTML = puzzles[puzzle][27];
+    p29.innerHTML = puzzles[puzzle][28];
+    p30.innerHTML = puzzles[puzzle][29];
+    p31.innerHTML = puzzles[puzzle][30];
+    p32.innerHTML = puzzles[puzzle][31];
+    p33.innerHTML = puzzles[puzzle][32];
+    p34.innerHTML = puzzles[puzzle][33];
+    p35.innerHTML = puzzles[puzzle][34];
+    p36.innerHTML = puzzles[puzzle][35];
+    p37.innerHTML = puzzles[puzzle][36];
+    p38.innerHTML = puzzles[puzzle][37];
+    p39.innerHTML = puzzles[puzzle][38];
+    p40.innerHTML = puzzles[puzzle][39];
+    p41.innerHTML = puzzles[puzzle][40];
+    p42.innerHTML = puzzles[puzzle][41];
+    p43.innerHTML = puzzles[puzzle][42];
+    p44.innerHTML = puzzles[puzzle][43];
+    p45.innerHTML = puzzles[puzzle][44];
+    p46.innerHTML = puzzles[puzzle][45];
+    p47.innerHTML = puzzles[puzzle][46];
+    p48.innerHTML = puzzles[puzzle][47];
+    p49.innerHTML = puzzles[puzzle][48];
+    p50.innerHTML = puzzles[puzzle][49];
+    p51.innerHTML = puzzles[puzzle][50];
+    p52.innerHTML = puzzles[puzzle][51];
+    p53.innerHTML = puzzles[puzzle][52];
+    p54.innerHTML = puzzles[puzzle][53];
+    p55.innerHTML = puzzles[puzzle][54];
+    p56.innerHTML = puzzles[puzzle][55];
+    p57.innerHTML = puzzles[puzzle][56];
+    p58.innerHTML = puzzles[puzzle][57];
+    p59.innerHTML = puzzles[puzzle][58];
+    p60.innerHTML = puzzles[puzzle][59];
+    p61.innerHTML = puzzles[puzzle][60];
+    p62.innerHTML = puzzles[puzzle][61];
+    p63.innerHTML = puzzles[puzzle][62];
+    p64.innerHTML = puzzles[puzzle][63];
+    p65.innerHTML = puzzles[puzzle][64];
+    p66.innerHTML = puzzles[puzzle][65];
+    p67.innerHTML = puzzles[puzzle][66];
+    p68.innerHTML = puzzles[puzzle][67];
+    p69.innerHTML = puzzles[puzzle][68];
+    p70.innerHTML = puzzles[puzzle][69];
+    p71.innerHTML = puzzles[puzzle][70];
+    p72.innerHTML = puzzles[puzzle][71];
+    p73.innerHTML = puzzles[puzzle][72];
+    p74.innerHTML = puzzles[puzzle][73];
+    p75.innerHTML = puzzles[puzzle][74];
+    p76.innerHTML = puzzles[puzzle][75];
+    p77.innerHTML = puzzles[puzzle][76];
+    p78.innerHTML = puzzles[puzzle][77];
+    p79.innerHTML = puzzles[puzzle][78];
+    p80.innerHTML = puzzles[puzzle][79];
+    p81.innerHTML = puzzles[puzzle][80];
 
     // retire la classe à toutes les cases
     function removeClass() {

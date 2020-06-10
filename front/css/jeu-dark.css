@@ -124,3 +124,41 @@ a {
 	font: bold 13px Arial;
 	color: #fff;
 }
+
+#alertVerifPasBon {
+    position: absolute;
+    width: 60%;
+    height: 25%;
+    background-color: yellow;
+    top: 30%;
+    left: 20%;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#alertVerifBon {
+    position: absolute;
+    width: 60%;
+    height: 25%;
+    background-color: blue;
+    top: 30%;
+    left: 20%;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#close {
+    margin-top: 15%;
+}
+
+#backMenu {
+    margin-top: 10%;
+}

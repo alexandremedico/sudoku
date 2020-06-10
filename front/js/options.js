@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function() {
     let header = document.getElementById('lien');
     let button = document.getElementsByTagName('input')[0];
     let buttonChecked = document.getElementsByTagName('input')[0].checked;
-    console.log(buttonChecked)
+    // console.log(buttonChecked);
     
     button.addEventListener('click', function () {
         if (button.checked == true) {
