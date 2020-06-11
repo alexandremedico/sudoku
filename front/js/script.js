@@ -186,6 +186,7 @@ window.addEventListener("DOMContentLoaded", function() {
             document.getElementById('alertVerifBon').classList.remove('none');
             document.getElementById('alertVerifBon').classList.add('bounce-in-top');
             clearInterval(interval);
+            clearInterval(score);
             let timer = document.getElementById('timer').textContent;
             let timerScore = document.getElementById('timeScore');
             let scoreValue = document.getElementById('score');
