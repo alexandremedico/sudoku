@@ -1,7 +1,7 @@
 # Sudoku
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 
-Projet personnel.
+Projet personnel ( pas encore terminé ).
 
 Mettre l'inspecteur de votre Browser et dimensionner la page en 425px pour une meilleur qualité niveau responsive.
 
