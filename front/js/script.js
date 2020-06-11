@@ -158,6 +158,7 @@ window.addEventListener("DOMContentLoaded", function() {
     verifSudoku.addEventListener('click', function () {
         zero = 0;
         for (let i = 0; i < 81; i++) {
+            document.getElementById((Object.values(classe))[i]).classList.remove('red');
             valid = document.getElementById((Object.values(classe))[i]);
             checkpuzzle = puzzles[puzzle][i];
             // console.log(valid.textContent);
@@ -166,6 +167,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 // alert('ok');
             } else {
                 // alert('not ok');
+                document.getElementById((Object.values(classe))[i]).classList.add('red');
                 zero++;
             }
         }
