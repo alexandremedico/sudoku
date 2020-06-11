@@ -182,12 +182,14 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
             // alert('bon');
             document.getElementById('alertVerifBon').classList.remove('none');
-            document.getElementById('alertVerifPasBon').classList.add('bounce-in-top');
+            document.getElementById('alertVerifBon').classList.add('bounce-in-top');
             clearInterval(interval);
             let timer = document.getElementById('timer').textContent;
             let timerScore = document.getElementById('timeScore');
+            let scoreValue = document.getElementById('score');
             // console.log(timerScore);
             timerScore.innerHTML = timer;
+            scoreValue.innerHTML = score;
         }
     })
 

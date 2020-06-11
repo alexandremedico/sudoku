@@ -104,6 +104,13 @@ a {
     color: white;
 }
 
+.bestScore {
+    font-family: 'Avocado';
+    margin-left: 5%;
+    font-size: 1.5rem;
+    color: white;
+}
+
 .none {
     visibility: hidden;
 }
@@ -145,7 +152,7 @@ a {
     position: absolute;
     width: 60%;
     height: 25%;
-    background-color: blue;
+    background-color: lightgrey;
     top: 30%;
     left: 20%;
     border-radius: 25px;
@@ -154,6 +161,7 @@ a {
     flex-direction: column;
     justify-content: center;
     font-size: 2rem;
+    border: 1px solid lightcoral;
 }
 
 #close {
