@@ -116,7 +116,6 @@ window.addEventListener("DOMContentLoaded", function() {
     socket.emit('valueSearch');
     socket.on('valueReception', function (valueContent) {
         value = (Object.values(niveaux))[valueContent - 1];
-        // console.log(value);
 
         for (let i = 0; i < value; i++) {
             nombreAlea = Math.floor(Math.random() * 81);
@@ -131,13 +130,10 @@ window.addEventListener("DOMContentLoaded", function() {
     
     function checkDouble(nombreAlea) {
         if (chiffreAffiche.indexOf(nombreAlea) !== -1 && nombreAlea != 0) {
-            // console.log('la valeur existe');
             j++;
         } else if (nombreAlea == 0){
-            // console.log('il y a un 0');
             j++;
         } else {
-            // console.log('la valeur n\'existe pas');
             chiffreAffiche.push(nombreAlea);
             ajoutChiffreGrille(nombreAlea);
         }
@@ -155,46 +151,43 @@ window.addEventListener("DOMContentLoaded", function() {
     let checkpuzzle = [];
     let zero = 0;
     let valueErreur;
-    verifSudoku.addEventListener('click', function () {
-        zero = 0;
-        for (let i = 0; i < 81; i++) {
-            document.getElementById((Object.values(classe))[i]).classList.remove('red');
-            valid = document.getElementById((Object.values(classe))[i]);
-            checkpuzzle = puzzles[puzzle][i];
-            // console.log(valid.textContent);
-            // console.log(checkpuzzle);
-            if (valid.textContent == checkpuzzle) {
-                // alert('ok');
-            } else {
-                // alert('not ok');
-                document.getElementById((Object.values(classe))[i]).classList.add('red');
-                zero++;
-            }
-        }
-        socket.emit('nombreErreur', zero)
-        if (zero != 0) {
-            // alert('pas bon');
-            document.getElementById('alertVerifPasBon').classList.remove('none');
-            document.getElementById('alertVerifPasBon').classList.add('bounce-in-top');
-            // clearInterval(interval);
-            socket.on('erreur', function (zero) {
-                valueErreur = document.getElementById('erreur');
-                valueErreur.innerHTML = zero;
+    setInterval(() => {
+        if (a == 0) {
+            document.getElementById('checkValidResponse').style.backgroundColor = "#d34836";
+            verifSudoku.addEventListener('click', function () {
+                zero = 0;
+                for (let i = 0; i < 81; i++) {
+                    document.getElementById((Object.values(classe))[i]).classList.remove('red');
+                    valid = document.getElementById((Object.values(classe))[i]);
+                    checkpuzzle = puzzles[puzzle][i];
+                    if (valid.textContent == checkpuzzle) {
+                    } else {
+                        document.getElementById((Object.values(classe))[i]).classList.add('red');
+                        zero++;
+                    }
+                }
+                socket.emit('nombreErreur', zero)
+                if (zero != 0) {
+                    document.getElementById('alertVerifPasBon').classList.remove('none');
+                    document.getElementById('alertVerifPasBon').classList.add('bounce-in-top');
+                    socket.on('erreur', function (zero) {
+                        valueErreur = document.getElementById('erreur');
+                        valueErreur.innerHTML = zero;
+                    })
+                } else {
+                    document.getElementById('alertVerifBon').classList.remove('none');
+                    document.getElementById('alertVerifBon').classList.add('bounce-in-top');
+                    clearInterval(interval);
+                    clearInterval(score);
+                    let timer = document.getElementById('timer').textContent;
+                    let timerScore = document.getElementById('timeScore');
+                    let scoreValue = document.getElementById('score');
+                    timerScore.innerHTML = timer;
+                    scoreValue.innerHTML = score;
+                }
             })
-        } else {
-            // alert('bon');
-            document.getElementById('alertVerifBon').classList.remove('none');
-            document.getElementById('alertVerifBon').classList.add('bounce-in-top');
-            clearInterval(interval);
-            clearInterval(score);
-            let timer = document.getElementById('timer').textContent;
-            let timerScore = document.getElementById('timeScore');
-            let scoreValue = document.getElementById('score');
-            // console.log(timerScore);
-            timerScore.innerHTML = timer;
-            scoreValue.innerHTML = score;
         }
-    })
+    }, 1000);
 
     // fermer le pop up
     document.getElementById('close').addEventListener('click', function name() {
@@ -204,11 +197,24 @@ window.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             document.getElementById('alertVerifPasBon').classList.remove('bounce-in-top-reverse');
             document.getElementById('alertVerifPasBon').classList.add('none');
-            for (let i = 0; i < 81; i++) {
-                document.getElementById((Object.values(classe))[i]).classList.remove('red');
-            }
+            // for (let i = 0; i < 81; i++) {
+            //     document.getElementById((Object.values(classe))[i]).classList.remove('red');
+            // }
         }, 1100);
-    })    
+    }) 
+    
+    
+    // bouton de verif
+    let a;
+    setInterval(() => {
+        a = 0;
+        for (let i = 0; i < 81; i++) {
+            document.getElementById((Object.values(classe))[i]).textContent;
+            if (document.getElementById((Object.values(classe))[i]).textContent == '') {
+                a++;
+            }
+        }
+    }, 2000);
 
 
     // ajout div et p

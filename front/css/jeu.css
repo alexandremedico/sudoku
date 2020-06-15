@@ -118,11 +118,11 @@ a {
     top: 5%;
     right: 10%;
     border: none;
-	padding: 6px 0 6px 0;
-	border-radius: 8px;
-	background: #d34836;
-	font: bold 13px Arial;
-	color: #fff;
+    padding: 6px 0 6px 0;
+    border-radius: 8px;
+    background: grey;
+    font: bold 13px Arial;
+    color: #fff;
 }
 
 #alertVerifPasBon {
