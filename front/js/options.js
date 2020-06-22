@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", function() {
             // passer en mode sombre
             buttonChecked = this.checked;
             // document.getElementById('background').style.backgroundColor = '#2ecc71';
+            // console.log(document.getElementById('checkbox').disabled);
             header.href = '../css/options-dark.css';
         } else {
             // passer en mode clair
